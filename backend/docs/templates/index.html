@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<head>
+	{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static "docs/css/lib/semantic.min.css"%}">
+	<link rel="stylesheet" type="text/css" href="{% static "docs/css/style.css"%}">
+	<script type="text/javascript" src="{% static "docs/js/lib/jquery.min.js"%}"></script>
+	<script src="{% static "docs/js/lib/semantic.min.js"%}"></script>
+	<title>Вестник.ml</title>
+	<meta name="description" content="Генератор документов для Молодежного вестниника. От студентов - студентам.">
+	<meta property="og:title" content="Вестник.ml"/>
+	<meta charset="utf-8" />
+	<meta property="og:description" content="Генератор документов для Молодежного вестниника. От студентов - студентам."/>
+</head>
+<body>
+	<div class="pusher">
+		<div class="full height">
+			<div class="ui one column center aligned grid container">
+				<div class="one column row">
+					<div class="fourteen wide column">
+						<h1 class="ui center aligned header">Документы
+						<div class="sub header">Молодежный вестник</div>
+						</h1>
+						<h3 class="ui horizontal section divider header">1. Статья</h3>
+						<div class="ui form">
+							<div class="one field">
+								<div class="field required"">
+									<label>Название</label>
+									<input name="title" type="text" placeholder="Название статьи">
+								</div>
+								<div class="field required"">
+									<label>УДК</label>
+									<input name="udk" type="text" placeholder="004.97">
+								</div>
+							</div>
+						</div>
+						<h3 class="ui horizontal section divider header">2. Кафедра</h3>
+						<div class="ui form">
+							<div class="two fields">
+								<div class="field">
+									<label>Факультет</label>
+									<select class="ui dropdown">
+										<option value="РЛ">РЛ</option>
+										<option value="ФН">ФН</option>
+										<option value="МТ">МТ</option>
+										<option value="Э">Э</option>
+										<option value="РК">РК</option>
+										<option value="ИУ">ИУ</option>
+										<option value="БМТ">БМТ</option>
+										<option value="ИБМ">ИБМ</option>
+										<option value="СМ">СМ</option>
+									</select>
+								</div>
+								<div class="field">
+									<label>Кафедра</label>
+									<select class="ui dropdown">
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+										<option value="5">5</option>
+										<option value="6">6</option>
+										<option value="7">7</option>
+										<option value="8">8</option>
+										<option value="9">9</option>
+										<option value="10">10</option>
+										<option value="11">11</option>
+										<option value="12">12</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<h3 class="ui horizontal section divider header">3. Научный руководитель</h3>
+						<div class="ui form">
+							<div class="three fields">
+								<div class="field required">
+									<label>Фамилия</label>
+									<input type="text" placeholder="Фамилия">
+								</div>
+								<div class="field required"">
+									<label>Имя</label>
+									<input type="text" placeholder="Имя">
+								</div>
+								<div class="field required"">
+									<label>Отчество</label>
+									<input type="text" placeholder="Отчество">
+								</div>
+							</div>
+							<div class="four fields">
+								<div class="field">
+									<label>Электронная почта</label>
+									<input type="text" placeholder="example@mail.com">
+								</div>
+								<div class="field">
+									<label>Диплом ВАК</label>
+									<input type="text" placeholder="145125">
+								</div>
+								<div class="field">
+									<label>Научная степерь</label>
+									<input type="text" placeholder="к.т.н.">
+								</div>
+								<div class="field">
+									<label>Должность</label>
+									<input type="text" placeholder="доцент">
+								</div>
+							</div>
+						</div>
+						<h3 class="ui horizontal section divider header">4. Авторы</h3>
+						<div class="ui form">
+							<div class="one field">
+								<label>Количество авторов</label>
+								<select id="authors_count" class="ui dropdown">
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+								</select>
+							</div>
+						</div>
+						<div class="ui horizontal divider"></div>
+						<div id="authors" class="ui equal width vertically divided grid p_rounded">
+							<div class="one column row">
+								<div class="column">
+									<div class="ui form">
+										<div class="four fields">
+											<div class="field required">
+												<label>Фамилия</label>
+												<input type="text" placeholder="Фамилия">
+											</div>
+											<div class="field required">
+												<label>Имя</label>
+												<input type="text" placeholder="Имя">
+											</div>
+											<div class="field required">
+												<label>Отчество</label>
+												<input type="text" placeholder="Отчество">
+											</div>
+											<div class="field required">
+												<label>ДР</label>
+												<input type="text" placeholder="Дата">
+											</div>
+											
+										</div>
+										<div class="four fields">
+											<div class="field required">
+												<label>Группа</label>
+												<input type="text" placeholder="ИУ1-12">
+											</div>
+											<div class="field required">
+												<label>Email</label>
+												<input type="text" placeholder="example@mail">
+											</div>
+											<div class="field required">
+												<label>Телефон</label>
+												<input type="text" placeholder="+7 555 55 55">
+											</div>
+											<div class="field">
+												<label>Должность</label>
+												<select class="ui dropdown">
+													<option value="бакалавр">бакалавр</option>
+													<option value="специалист">специалист</option>
+													<option value="магистр">магистр</option>
+													<option value="аспирант">аспирант</option>
+												</select>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="ui horizontal divider"></div>
+						<button id="process_button" class="fluid ui blue button">Сгенерировать</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="ui inverted vertical footer segment">
+			<div class="ui container">
+				<h4 class="ui inverted center aligned header light" style="font-weight: 100">
+				Made with ♥ by
+				<a class="ui red small header" href="https://github.com/rgnlax">rgnlax</a>
+				<div class="ui horizontal divider" style="margin: 5px;" ></div>
+				<div class="sub header">2016</div>
+				</h4>
+			</div>
+		</div>
+		<div id="documents_modal" class="ui coupled modal">
+			<i class="close icon"></i>
+			<h2 class="ui header">
+			Выбор документов
+			<div id="documents_count" class="sub header">Выбрано: 4</div>
+			</h2>
+			<div class="content my-content">
+				<div class="ui stackable center aligned grid">
+					<div class="four columns row">
+						<div class="four wide column">
+							<div class="ui segment">
+								<h3 class="ui header">Анкета
+								<div class="sub header">Анкета всех авторов статьи</div>
+								</h3>
+								<div class="ui checkbox">
+									<input type="checkbox" name="form">
+									<label></label>
+								</div>
+							</div>
+						</div>
+						<div class="four wide column">
+							<div class="ui segment">
+								<h3 class="ui header">Записка
+								<div class="sub header">Служебная записка статьи</div>
+								</h3>
+								<div class="ui checkbox">
+									<input type="checkbox" name="memo">
+									<label></label>
+								</div>
+							</div>
+						</div>
+						<div class="four wide column">
+							<div class="ui segment">
+								<h3 class="ui header">Заявление
+								<div class="sub header">Авторское заявление статьи</div>
+								</h3>
+								<div class="ui checkbox">
+									<input type="checkbox" name="claim">
+									<label></label>
+								</div>
+							</div>
+						</div>
+						<div class="four wide column">
+							<div class="ui segment">
+								<h3 class="ui header">Отзыв
+								<div class="sub header">Отзвы научного руководителя</div>
+								</h3>
+								<div class="ui checkbox">
+									<input type="checkbox" name="review">
+									<label></label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="actions">
+				<div class="ui black deny button">
+					Отмена
+				</div>
+				<div id="generate_button" class="ui positive right icon button">
+					Сгенерировать
+				</div>
+			</div>
+		</div>
+		<div id="download_modal" class="ui small modal">
+			<i class="close icon"></i>
+			<div class="content my-content">
+				<div class="ui two column center aligned grid">
+					<div class="row">
+						<div class="fourteen wide column">
+							<h2 class="ui center aligned icon header">
+							<i class="circular file archive outline icon"></i>
+							Готово
+							<div class="sub header">Документы доступны для скачивания по ссылке:</div>
+							</h2>
+							<div class="ui form">
+								<div class="one field">
+									<div class="field">
+										<label></label>
+										<input id="url_field" name="title" type="text" readonly="">
+									</div>
+								</div>
+							</div>
+							<div id="download_button" style="margin-left:0px; margin-top: 1rem;" class="ui positive fluid right labeled icon button">
+								Скачать
+								<i class="download icon"></i>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="{% static "docs/js/site.min.js"%}"></script>
+		<!-- Yandex.Metrika counter --> 
+		<script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter37857030 = new Ya.Metrika({ id:37857030, clickmap:true, trackLinks:true, accurateTrackBounce:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/37857030" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
+	</body>

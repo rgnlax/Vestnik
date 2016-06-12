@@ -1,0 +1,23 @@
+version: '2'
+
+services:
+  backend:
+    container_name: "backend"
+    build: "backend"
+    volumes:
+      - /data/generator/static:/usr/src/generator/static
+      - /data/generator/db:/usr/src/generator/db
+    ports:
+      - 5000:5000
+
+  balancer:
+    container_name: "balancer"
+    build: "balancer"
+    volumes:
+      - /www/static
+    volumes_from:
+      - backend
+    links:
+      - backend:backend
+    ports: 
+      - "80:80"
