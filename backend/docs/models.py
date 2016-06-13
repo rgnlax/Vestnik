@@ -39,7 +39,7 @@ class Reviewer(models.Model):
 
 class Department(models.Model):
     full_name = models.CharField(max_length=200)
-    short_name = models.CharField(max_length=20)
+    short_name = models.CharField(max_length=20, unique=True)
     head_first_name = models.CharField(max_length=100)
     head_last_name = models.CharField(max_length=100)
     head_patronymic = models.CharField(max_length=100)

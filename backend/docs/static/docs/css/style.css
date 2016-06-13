@@ -1,3 +1,7 @@
+html, body {
+    min-height: 100%;
+}
+
 body {
     margin: 0px;
     background-color: #F9FAFB;
@@ -31,4 +35,12 @@ h1, h2, h3 {
 
 .ui.inverted.vertical.footer.segment {
     padding: 60px 0;
+}
+
+.pusher {
+    min-height:calc(100% - 166px);
+}
+
+#footer {
+    height: 166px;
 }

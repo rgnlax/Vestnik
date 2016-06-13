@@ -1,8 +1,9 @@
-function getArticle() {
+		function getArticle() {
+			var dep = $(".dropdown > .text")[0].innerHTML === 'ЮР' ? $(".dropdown > .text")[0].innerHTML : $(".dropdown > .text")[0].innerHTML + $(".dropdown > .text")[1].innerHTML;
 			var article = {
 				title: $("input")[0].value,
 				udk: $("input")[1].value,
-				department: $(".dropdown > .text")[0].innerHTML + $(".dropdown > .text")[1].innerHTML,
+				department: dep,
 				reviewer: {
 					last_name: $("input")[2].value,
 					first_name:$("input")[3].value,
@@ -85,4 +86,3 @@ function getArticle() {
 				window.location.href = document.getElementById("url_field").value
 			})
 		})();
-		//$("#generate_button").click(send);

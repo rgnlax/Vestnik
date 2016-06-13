@@ -22,5 +22,9 @@ class Command(BaseCommand):
                                head_first_name=head_first_name,
                                head_last_name=head_last_name,
                                head_patronymic=head_patronymic)
-                d.save()
-                print d.short_name
+                try:
+                    d.save()
+                    print d.short_name
+                except:
+                    print d.short_name + '-Exception!'
+

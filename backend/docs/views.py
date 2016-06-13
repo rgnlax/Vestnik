@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from django.http import HttpResponse, JsonResponse
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, get_object_or_404
 from django.views.decorators.csrf import csrf_exempt
 from models import Article, Archieve
 import json
@@ -29,3 +29,4 @@ def documents_download(request, document_id):
     response = HttpResponse(open(a.path, 'rb').read(), content_type='application/zip')
     response['Content-Disposition'] = 'attachment; filename=%s.zip' % a.name
     return response
+
